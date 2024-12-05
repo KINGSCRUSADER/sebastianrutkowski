@@ -23,14 +23,38 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        nav a {
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
             text-decoration: none;
             color: #007BFF;
             font-size: 18px;
-            margin: 0 15px;
         }
-        nav a:hover {
-            text-decoration: underline;
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: white;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav ul li ul li {
+            margin: 5px 0;
+        }
+        nav ul li ul li a {
+            color: #007BFF;
+            font-size: 16px;
+        }
+        nav ul li:hover ul {
+            display: block;
         }
         h1 {
             text-align: center;
@@ -63,15 +87,43 @@
 
 <div class="container">
     <nav>
-        <a href="index.html">Strona Główna</a>
-        <a href="o_mnie.html">O mnie</a>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li>
+                <a href="o_mnie.html">O mnie</a>
+                <ul>
+                    <li><a href="hobby.html">Hobby</a></li>
+                    <li><a href="sport.html">Sport</a></li>
+                </ul>
+            </li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li>
+                <a href="projekty.html">Projekty</a>
+                <ul>
+                    <li><a href="informatyka.html">Informatyka</a></li>
+                    <li><a href="przyroda.html">Przyroda</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <h1>O mnie</h1>
-    <p>Nazywam się Sebastian i uczęszczam do liceum im. Jana Kochanowskiegow w warszawie. Interesuje się rowerami i graniem w gry komputerowe. Uprawiam sporty takie jak wspinaczka i siatkówka.
-    </p>
-   
+    <p>Nazywam się Sebastian i uczęszczam do Liceum im. Jana Kochanowskiego w Warszawie. Interesuję się rowerami i graniem w gry komputerowe. Uprawiam sporty takie jak wspinaczka i siatkówka.</p>
 </div>
+
+<script>
+    document.querySelectorAll('nav ul li').forEach(li => {
+        li.addEventListener('mouseenter', () => {
+            const submenu = li.querySelector('ul');
+            if (submenu) submenu.style.display = 'block';
+        });
+        li.addEventListener('mouseleave', () => {
+            const submenu = li.querySelector('ul');
+            if (submenu) submenu.style.display = 'none';
+        });
+    });
+</script>
 
 </body>
 </html>
