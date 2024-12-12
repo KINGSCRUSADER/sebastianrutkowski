@@ -1,21 +1,3 @@
-/* Ogólne ustawienia */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-/* Główna kontener */
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Nawigacja */
 nav {
     text-align: center;
@@ -25,12 +7,15 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centruje elementy nawigacji */
+    flex-wrap: wrap; /* Zapewnia, że linki zmieszczą się w przypadku małych ekranów */
 }
 
 nav ul li {
-    display: inline-block;
-    position: relative;
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
@@ -61,55 +46,4 @@ nav ul li ul li a {
 
 nav ul li:hover ul {
     display: block;
-}
-
-/* Nagłówki */
-h1, h2 {
-    color: #333;
-    text-align: center;
-}
-
-/* Akapit */
-p {
-    max-width: 800px;
-    margin: 20px auto;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-/* Listy */
-ul {
-    text-align: left;
-    margin: 20px auto;
-    padding-left: 20px;
-    max-width: 800px;
-    line-height: 1.8;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Obrazki */
-.responsive-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Przycisk */
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
